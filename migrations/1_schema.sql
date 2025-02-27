@@ -96,17 +96,17 @@ CREATE TABLE technical_personnel (
 
 CREATE TABLE technician (
     id INTEGER UNIQUE NOT NULL REFERENCES technical_personnel(id),
-    safety_training_level VARCHAR(64)
+    safety_training_level VARCHAR(64) NOT NULL,
 );
 
 CREATE TABLE technologist (
     id INTEGER UNIQUE NOT NULL REFERENCES technical_personnel(id),
-    management_tools VARCHAR(256)
+    management_tools VARCHAR(256) NOT NULL,
 );
 
 CREATE TABLE engineer (
     id INTEGER UNIQUE NOT NULL REFERENCES technical_personnel(id),
-    pe_license_id BIGINT
+    pe_license_id BIGINT NOT NULL,
 );
 
 CREATE TABLE brigade (
@@ -170,7 +170,7 @@ CREATE TABLE housing (
     site_id INTEGER NOT NULL REFERENCES site(id),
     number_of_floors INTEGER NOT NULL,
     number_of_entrances INTEGER NOT NULL,
-    type VARCHAR(64) NOT NULL,
+    housing_type VARCHAR(64) NOT NULL,
     energy_efficiency CHAR
 );
 
